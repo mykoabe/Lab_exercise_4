@@ -4,25 +4,27 @@
         accountNum: " ",
         accountBalance: " ",
         createAcount: function () {
-            this.accountOwner = Number(prompt("Please insert full name"))
-            this.accountNum =Number (prompt("please enter the acount number"))
-            this.balance = Number(prompt("please enter the balance deposited"))
-            let assume = ((this.balance !== ([0-9.,]))? "Please insert the number"  : "continue Press ok")
-            alert(assume);
-            // while(this.accountBalance == (/^[a-z]+$/)){
-            //     alert("you can't insert that number please do again")
-            // }
+            var accountOwner = prompt("Please insert full name")
+            var accountNum =prompt("please enter the acount number")
+            var balance = prompt("please enter the balance deposited")
+            this.accountOwner = accountOwner
+            this.accountNum = accountNum
+            this.balance = balance
+            alert(`you have created account successfuly
+            with full_name = ${this.accountOwner}
+            and accountNumber ${this.accountNum}`)
         },  
-
         balance: function(){
             alert(this.accountBalance)
         },
-        withdrawAmount: function (accountBalance){
+        // for withdraw amount
+        withdrawAmount: function (){
         var withdrawAmount = prompt("Tell me the amount you wanna to withdraw")
-        var withdraw = ((withdrawAmount >= this.accountBalance)? alert(`You withdraw ${withdrawAmount} and your account balance is now ${this.accountBalance-withdrawAmount}`)
-         : "Please enter another amount you have no that much")
-         alert(withdraw)
+        var withdraw = (parseFloat(this.accountBalance) >= parseFloat(withdrawAmount))? alert(`You withdraw ${withdrawAmount} and your current balance is ${parseFloat(this.accountBalance) - parseFloat(withdrawAmount)}`)
+        : alert('You can\'t do this operation')
+        alert(withdraw)
         },
+        // for the transfer amount
         Transfer: function(){
             let accountNumber = prompt("Please enter the account number you wanna transfer")
             let transferValue = Number(prompt("Enter the amount to transfer"))
