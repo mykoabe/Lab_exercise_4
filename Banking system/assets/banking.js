@@ -4,10 +4,10 @@
         accountNum: " ",
         accountBalance: " ",
         createAcount: function () {
-            this.accountOwner = prompt("Please insert full name")
-            this.accountNum = prompt("please enter the acount number")
-            this.balance = prompt("please enter the balance deposited")
-            let assume = ((this.balance == (/^[0-9.,]+$/))? "continue Press ok" : "Please enter the valid number")
+            this.accountOwner = Number(prompt("Please insert full name"))
+            this.accountNum =Number (prompt("please enter the acount number"))
+            this.balance = Number(prompt("please enter the balance deposited"))
+            let assume = ((this.balance !== ([0-9.,]))? "Please insert the number"  : "continue Press ok")
             alert(assume);
             // while(this.accountBalance == (/^[a-z]+$/)){
             //     alert("you can't insert that number please do again")
